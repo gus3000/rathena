@@ -19,6 +19,7 @@ services:
         image: "rathena:local"
         container_name: "rathena-builder"
         command: "/rathena/tools/docker/builder.sh"
+        user: '1000:1000'
         volumes:
             - "../..:/rathena" # mount git repo directory inside container
             - "./asset/inter_conf.txt:/rathena/conf/import/inter_conf.txt" # load db connection

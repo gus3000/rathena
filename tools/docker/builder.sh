@@ -1,3 +1,4 @@
+#set -o xtrace
 if [ ! -f /rathena/login-server ]; then
   export runBuild=1;
 elif [ ! -f /rathena/char-server ]; then
@@ -17,5 +18,6 @@ if [ "${runBuild}" -eq "1" ]; then
     ./configure $BUILDER_CONFIGURE
   fi
 
-  make clean server;
+  make clean
+  make -j8 server;
 fi

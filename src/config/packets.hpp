@@ -41,25 +41,25 @@
 	#undef PACKETVER_MAIN_NUM
 #endif
 
-#if PACKETVER >= 20110817
-	/// Comment to disable the official packet obfuscation support.
-	/// This requires PACKETVER 2011-08-17 or newer.
-	#ifndef PACKET_OBFUSCATION
-		#define PACKET_OBFUSCATION
+// #if PACKETVER >= 20110817
+// 	/// Comment to disable the official packet obfuscation support.
+// 	/// This requires PACKETVER 2011-08-17 or newer.
+// 	#ifndef PACKET_OBFUSCATION
+// 		#define PACKET_OBFUSCATION
 
-		// Define these inside src/custom/defines_pre.hpp or src/custom/defines_post.hpp
-		//#define PACKET_OBFUSCATION_KEY1 <key1>
-		//#define PACKET_OBFUSCATION_KEY2 <key2>
-		//#define PACKET_OBFUSCATION_KEY3 <key3>
+// 		// Define these inside src/custom/defines_pre.hpp or src/custom/defines_post.hpp
+// 		//#define PACKET_OBFUSCATION_KEY1 <key1>
+// 		//#define PACKET_OBFUSCATION_KEY2 <key2>
+// 		//#define PACKET_OBFUSCATION_KEY3 <key3>
 
-		/// Comment this to disable warnings for missing client side encryption
-		#define PACKET_OBFUSCATION_WARN
-	#endif
-#else
-	#if defined(PACKET_OBFUSCATION)
-		#error You enabled packet obfuscation for a version which is too old. Minimum supported client is 2011-08-17.
-	#endif
-#endif
+// 		/// Comment this to disable warnings for missing client side encryption
+// 		#define PACKET_OBFUSCATION_WARN
+// 	#endif
+// #else
+// 	#if defined(PACKET_OBFUSCATION)
+// 		#error You enabled packet obfuscation for a version which is too old. Minimum supported client is 2011-08-17.
+// 	#endif
+// #endif
 
 /// Comment to disable the official Guild Storage skill.
 /// When enabled, this will set the guild storage size to the level of the skill * 100.

@@ -36,22 +36,22 @@ izlude_c,172,215,4	duplicate(Charfri_izlude)	Charfri#izlude_c	4_F_02
 izlude_d,172,215,4	duplicate(Charfri_izlude)	Charfri#izlude_d	4_F_02
 
 izlude,174,164,4	duplicate(Cuskoal_izlude)	Cuskoal#izlude	4_F_TELEPORTER
-izlude_a,174,164,4	duplicate(Cuskoal_izlude)	Cuskoal#izlude_a	4_F_TELEPORTER
-izlude_b,174,164,4	duplicate(Cuskoal_izlude)	Cuskoal#izlude_b	4_F_TELEPORTER
-izlude_c,174,164,4	duplicate(Cuskoal_izlude)	Cuskoal#izlude_c	4_F_TELEPORTER
-izlude_d,174,164,4	duplicate(Cuskoal_izlude)	Cuskoal#izlude_d	4_F_TELEPORTER
-
-izlude,85,103,4	duplicate(Dega_izlude)	Dega#izlude	4_M_02
-izlude_a,85,103,4	duplicate(Dega_izlude)	Dega#izlude_a	4_M_02
-izlude_b,85,103,4	duplicate(Dega_izlude)	Dega#izlude_b	4_M_02
-izlude_c,85,103,4	duplicate(Dega_izlude)	Dega#izlude_c	4_M_02
-izlude_d,85,103,4	duplicate(Dega_izlude)	Dega#izlude_d	4_M_02
-
-izlude,140,186,4	duplicate(Kylick_izlude)	Kylick#izlude	4W_M_01
-izlude_a,140,186,4	duplicate(Kylick_izlude)	Kylick#izlude_a	4W_M_01
-izlude_b,140,186,4	duplicate(Kylick_izlude)	Kylick#izlude_b	4W_M_01
-izlude_c,140,186,4	duplicate(Kylick_izlude)	Kylick#izlude_c	4W_M_01
-izlude_d,140,186,4	duplicate(Kylick_izlude)	Kylick#izlude_d	4W_M_01
+//izlude_a,174,164,4	duplicate(Cuskoal_izlude)	Cuskoal#izlude_a	4_F_TELEPORTER
+//izlude_b,174,164,4	duplicate(Cuskoal_izlude)	Cuskoal#izlude_b	4_F_TELEPORTER
+//izlude_c,174,164,4	duplicate(Cuskoal_izlude)	Cuskoal#izlude_c	4_F_TELEPORTER
+//izlude_d,174,164,4	duplicate(Cuskoal_izlude)	Cuskoal#izlude_d	4_F_TELEPORTER
+//
+//izlude,85,103,4	duplicate(Dega_izlude)	Dega#izlude	4_M_02
+//izlude_a,85,103,4	duplicate(Dega_izlude)	Dega#izlude_a	4_M_02
+//izlude_b,85,103,4	duplicate(Dega_izlude)	Dega#izlude_b	4_M_02
+//izlude_c,85,103,4	duplicate(Dega_izlude)	Dega#izlude_c	4_M_02
+//izlude_d,85,103,4	duplicate(Dega_izlude)	Dega#izlude_d	4_M_02
+//
+//izlude,140,186,4	duplicate(Kylick_izlude)	Kylick#izlude	4W_M_01
+//izlude_a,140,186,4	duplicate(Kylick_izlude)	Kylick#izlude_a	4W_M_01
+//izlude_b,140,186,4	duplicate(Kylick_izlude)	Kylick#izlude_b	4W_M_01
+//izlude_c,140,186,4	duplicate(Kylick_izlude)	Kylick#izlude_c	4W_M_01
+//izlude_d,140,186,4	duplicate(Kylick_izlude)	Kylick#izlude_d	4W_M_01
 
 izlude,57,159,2	duplicate(Red_izlude)	Red#izlude	4_M_03
 izlude_a,57,159,2	duplicate(Red_izlude)	Red#izlude_a	4_M_03
