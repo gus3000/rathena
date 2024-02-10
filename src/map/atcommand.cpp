@@ -6656,6 +6656,7 @@ TIMER_FUNC(autopilot_update){
     auto* aiPlayer = (AiPlayer*)data;
     aiPlayer->update();
     aiPlayer->displayStatus();
+    aiPlayer->displayPath();
     return 0;
 }
 
@@ -6663,7 +6664,7 @@ TIMER_FUNC(autopilot_update){
 ACMD_FUNC(autopilot) {
     ShowInfo("Starting autopilot...\nSome info : fd=%d, command=%s, message=%s\n", fd, command, message);
     clif_displaymessage(fd, "Starting autopilot");
-    AiPlayer *aiPlayer = new AiPlayer(sd);
+    auto *aiPlayer = new AiPlayer(sd);
     aiPlayer->displayStatus();
     add_timer_interval(gettick()+1000, autopilot_update,0,(intptr_t )aiPlayer,1000);
     return 0;

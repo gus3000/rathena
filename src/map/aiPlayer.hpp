@@ -6,6 +6,7 @@
 #define RATHENA_AIPLAYER_HPP
 
 #include <string>
+#include <random>
 
 #include "pc.hpp"
 
@@ -14,6 +15,9 @@ protected:
     map_session_data *_md;
     int x;
     int y;
+
+    std::mt19937 gen;
+    std::uniform_int_distribution<> distr;
 
     void getMonsters();
 
@@ -26,6 +30,7 @@ public:
     void sendClientMessage(const std::string &message);
 
     void displayStatus();
+    void displayPath();
 };
 
 
