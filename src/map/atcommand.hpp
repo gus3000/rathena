@@ -6,6 +6,7 @@
 
 #include <common/cbasetypes.hpp>
 #include <common/mmo.hpp>
+#include "aiPlayer.hpp"
 
 class map_session_data;
 

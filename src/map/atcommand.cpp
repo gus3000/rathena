@@ -6644,6 +6644,31 @@ ACMD_FUNC(partyoption)
 	return 0;
 }
 
+//TIMER_FUNC(x) int x ( int tid, t_tick tick, int id, intptr_t data )
+TIMER_FUNC(autopilot_update){
+//    clif_displaymessage(data, "Starting autopilot");
+//    auto* md = (map_session_data*)data;
+//    int x = md->bl.x;
+//    int y = md->bl.y;
+//    char message[50];
+//    sprintf(message, "Autopilot, position = %d,%d", x, y);
+//    clif_displaymessage(md->fd, message);
+    auto* aiPlayer = (AiPlayer*)data;
+    aiPlayer->update();
+    aiPlayer->displayStatus();
+    return 0;
+}
+
+//static int atcommand_ ## x (const int fd, map_session_data* sd, const char* command, const char* message)
+ACMD_FUNC(autopilot) {
+    ShowInfo("Starting autopilot...\nSome info : fd=%d, command=%s, message=%s\n", fd, command, message);
+    clif_displaymessage(fd, "Starting autopilot");
+    AiPlayer *aiPlayer = new AiPlayer(sd);
+    aiPlayer->displayStatus();
+    add_timer_interval(gettick()+1000, autopilot_update,0,(intptr_t )aiPlayer,1000);
+    return 0;
+}
+
 /*==========================================
  * @autoloot by Upa-Kun
  * Turns on/off AutoLoot for a specific player
@@ -11179,6 +11204,7 @@ void atcommand_basecommands(void) {
 		ACMD_DEF(undisguiseall),
 		ACMD_DEF(disguiseall),
 		ACMD_DEF(changelook),
+		ACMD_DEF(autopilot),
 		ACMD_DEF(autoloot),
 		ACMD_DEF2("alootid", autolootitem),
 		ACMD_DEF(autoloottype),
