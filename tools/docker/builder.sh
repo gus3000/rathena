@@ -1,23 +1,46 @@
-#set -o xtrace
-if [ ! -f /rathena/login-server ]; then
+#!/bin/bash
+
+set -o xtrace
+export runConfigure=0;
+export runBuild=0;
+export runClean=0;
+export runFull=0;
+
+if [ -n "$BUILDER_FORCEBUILD" ]; then
   export runBuild=1;
-elif [ ! -f /rathena/char-server ]; then
-  export runBuild=1;
-elif [ ! -f /rathena/map-server ]; then
-  export runBuild=1;
-else
-  export runBuild=0;
+fi
+if [ -n "$BUILDER_FORCECLEAN" ]; then
+  export runClean=1;
+fi
+if [ -n "$BUILDER_FORCE_FULL_BUILD" ]; then
+  export runFull=1;
 fi
 
-if [ "${runBuild}" -eq "1" ]; then
+if [ ! -f /rathena/login-server ]; then
+  export runFull=1;
+elif [ ! -f /rathena/char-server ]; then
+  export runFull=1;
+elif [ ! -f /rathena/map-server ]; then
+  export runFull=1;
+fi
+
+if (( $runFull == 1 )); then
+  export runConfigure=1;
+  export runBuild=1;
+  export runClean=1;
+fi
+
+if [[ "${runBuild}" -eq "1" ]]; then
   ### checking that ./configure has ran by looking for make file
-  if [ ! -f /rathena/make ]; then
+  if [ ! -f /rathena/make ] && [ "${runConfigure}" -eq "1" ]; then
     echo "Warning: ./configure will be executed with provided values";
     echo "Make sure you have set the variables you want in the docker-compose.yml file";
     echo $BUILDER_CONFIGURE
     ./configure $BUILDER_CONFIGURE
   fi
 
-  make clean
+  if [ "$runClean" -eq "1" ]; then
+    make clean
+  fi
   make -j8 server;
 fi

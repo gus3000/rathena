@@ -33,7 +33,10 @@ services:
             dockerfile: Dockerfile
         environment:
             BUILDER_CONFIGURE: "--enable-packetver=20211103"
-    
+            BUILDER_FORCEBUILD: ${BUILDER_FORCEBUILD}
+            BUILDER_FORCECLEAN: ${BUILDER_FORCECLEAN}
+            BUILDER_FORCE_FULL_BUILD: ${BUILDER_FORCE_FULL_BUILD}
+
     login:
         image: "rathena:local"
         container_name: "rathena-login"
