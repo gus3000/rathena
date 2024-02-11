@@ -10,18 +10,26 @@
 
 #include "pc.hpp"
 
+#define AI_PLAYER_ATTACK_RANGE 10
+
 class AiPlayer {
 protected:
     map_session_data *_md;
-    int x;
-    int y;
+    int16 x;
+    int16 y;
 
     std::mt19937 gen;
     std::uniform_int_distribution<> distr;
 
-    void getMonsters();
+    mob_data* closest_mob();
+    bool attack_closest_mob();
+    void randomWalk();
 
 public:
+    int16 getX() const;
+
+    int16 getY() const;
+
     explicit AiPlayer(map_session_data *);
 
     void update();

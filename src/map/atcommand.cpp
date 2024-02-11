@@ -2322,6 +2322,7 @@ static int atkillmonster_sub(struct block_list *bl, va_list ap)
 	return 1;
 }
 
+//static int atcommand_killmonster (const int fd, map_session_data* sd, const char* command, const char* message)
 ACMD_FUNC(killmonster)
 {
 	int map_id, drop_flag;
@@ -6655,8 +6656,8 @@ TIMER_FUNC(autopilot_update){
 //    clif_displaymessage(md->fd, message);
     auto* aiPlayer = (AiPlayer*)data;
     aiPlayer->update();
-    aiPlayer->displayStatus();
-    aiPlayer->displayPath();
+//    aiPlayer->displayStatus();
+//    aiPlayer->displayPath();
     return 0;
 }
 
