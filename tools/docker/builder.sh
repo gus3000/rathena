@@ -6,10 +6,13 @@ export runBuild=0;
 export runClean=0;
 export runFull=0;
 
-if [ -n "$BUILDER_FORCEBUILD" ]; then
+if [ -n "$BUILDER_FORCE_CONFIGURE" ]; then
+  export runConfigure=1;
+fi
+if [ -n "$BUILDER_FORCE_BUILD" ]; then
   export runBuild=1;
 fi
-if [ -n "$BUILDER_FORCECLEAN" ]; then
+if [ -n "$BUILDER_FORCE_CLEAN" ]; then
   export runClean=1;
 fi
 if [ -n "$BUILDER_FORCE_FULL_BUILD" ]; then

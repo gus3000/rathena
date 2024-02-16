@@ -33,8 +33,9 @@ services:
             dockerfile: Dockerfile
         environment:
             BUILDER_CONFIGURE: "--enable-packetver=20211103"
-            BUILDER_FORCEBUILD: ${BUILDER_FORCEBUILD}
-            BUILDER_FORCECLEAN: ${BUILDER_FORCECLEAN}
+            BUILDER_FORCE_CONFIGURE: ${BUILDER_FORCE_CONFIGURE}
+            BUILDER_FORCE_BUILD: ${BUILDER_FORCE_BUILD}
+            BUILDER_FORCE_CLEAN: ${BUILDER_FORCE_CLEAN}
             BUILDER_FORCE_FULL_BUILD: ${BUILDER_FORCE_FULL_BUILD}
 
     login:

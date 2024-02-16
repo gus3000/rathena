@@ -40,6 +40,7 @@
 #include "int_party.hpp"
 #include "int_storage.hpp"
 #include "packets.hpp"
+#include "common/utils.hpp"
 
 using namespace rathena;
 using namespace rathena::server_character;

@@ -9,26 +9,36 @@
 #include <random>
 
 #include "pc.hpp"
+#include "mappoint.hpp"
+#include "aitargetmob.hpp"
 
 #define AI_PLAYER_ATTACK_RANGE 10
 
 class AiPlayer {
 protected:
     map_session_data *_md;
-    int16 x;
-    int16 y;
+    AiTargetMob *target;
+    MapPoint *destination;
 
     std::mt19937 gen;
-    std::uniform_int_distribution<> distr;
+    std::uniform_int_distribution<short> distr;
 
-    mob_data* closest_mob();
-    bool attack_closest_mob();
+
+//    AiTargetMob* get_closest_mob();
+    void target_closest_mob();
+
+    void remove_target_if_invalid();
+
+    bool attack_target();
+
     void randomWalk();
 
-public:
-    int16 getX() const;
+    static std::map<int, AiPlayer *> players;
 
-    int16 getY() const;
+public:
+    [[nodiscard]] short x() const { return _md->bl.x; }
+
+    [[nodiscard]] short y() const { return _md->bl.y; }
 
     explicit AiPlayer(map_session_data *);
 
@@ -38,8 +48,14 @@ public:
     void sendClientMessage(const std::string &message);
 
     void displayStatus();
-    void displayPath();
-};
 
+    void displayPath();
+
+    void navigateToDestination();
+
+    static AiPlayer *getPlayer(map_session_data *md);
+
+    double distance(const AiTargetMob *mob) const;
+};
 
 #endif //RATHENA_AIPLAYER_HPP
